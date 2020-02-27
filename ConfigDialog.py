@@ -43,6 +43,7 @@ class ConfigDialog(QDialog ):
 
         # stupid qvariant return a tuple...
         zoom_scale = caller.get_config('ZoomScale', 0)
+        tomtom_key = caller.get_config('tomtomKey', '')
         # Use pdb for debugging
         #import pdb
         ## These lines allow you to set a breakpoint in the app
@@ -50,6 +51,7 @@ class ConfigDialog(QDialog ):
         #pdb.set_trace()
 
         self.ZoomScale.setValue(int(zoom_scale))
+        self.tomtomKey.setText(tomtom_key)
         self.debugCheckBox.setChecked(caller.get_config('writeDebug', '') == True)
 
 
