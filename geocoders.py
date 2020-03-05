@@ -62,11 +62,12 @@ class GoogleGeoCoder():
 
     def __init__(self, api_key=None):
         self.api_key = api_key
+        url = self.url
 
     def geocode(self, address):
 
         if self.api_key is not None and self.api_key.replace(' ', '') != '':
-            url += self.url + '&key=' + self.api_key
+            url = self.url + '&key=' + self.api_key
         else:
             url = self.url
 
